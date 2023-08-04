@@ -1,0 +1,11 @@
+<h1>Restaurant List</h1>
+
+<% @restaurants = Restaurant.all %>
+<% if @restaurants.blank? %>
+  <p>Not Found. Click <%= link_to "Here", new_restaurant_path %> to add a Resrautant.  </p>
+
+  <% else %>
+    <% @restaurants.each do |restaurant| %>
+      <%= restaurant.name %>
+    <% end %>
+<% end %>
