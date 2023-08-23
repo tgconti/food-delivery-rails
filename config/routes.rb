@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   root "pages#home"
   resources :restaurants do
     resources :meals
-    resources :orders, only: [:index, :new, :create]
+    resources :orders, only: %i[index new create]
   end
   resources :orders, only: [:show]
+  resources :profiles, only: %i[show edit]
 end
